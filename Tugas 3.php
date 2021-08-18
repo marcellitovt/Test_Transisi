@@ -15,10 +15,24 @@ function unbGenerator($string){
 		}
 	$unigram = substr($unigram, 0, -2);
     
+       //Bigram
+       $n = 0;
+       $bigram = '';
+           foreach($input as $word){
+               if ($n == 0){
+                   $bigram .= $word.' ';
+                   $n++;
+               }
+               else {
+                   $bigram .= $word.', ';
+                   $n = 0;
+               }
+           }
+       $bigram = substr($bigram, 0, -2);
  
 
 
-    return $unigram;
+    return $bigram;
 }
 
 echo unbGenerator("Jakarta adalah ibukota negara Republik Indonesia");
