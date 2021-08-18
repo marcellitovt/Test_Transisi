@@ -15,24 +15,40 @@ function unbGenerator($string){
 		}
 	$unigram = substr($unigram, 0, -2);
     
-       //Bigram
-       $n = 0;
-       $bigram = '';
-           foreach($input as $word){
-               if ($n == 0){
-                   $bigram .= $word.' ';
-                   $n++;
-               }
-               else {
-                   $bigram .= $word.', ';
-                   $n = 0;
-               }
+    //Bigram
+    $n = 0;
+    $bigram = '';
+        foreach($input as $word){
+            if ($n == 0){
+               $bigram .= $word.' ';
+               $n++;
            }
-       $bigram = substr($bigram, 0, -2);
+            else {
+               $bigram .= $word.', ';
+               $n = 0;
+           }
+        }
+    $bigram = substr($bigram, 0, -2);
  
+        
 
-
-    return $bigram;
+    //Trigram
+    $n = 0;
+    $trigram = '';
+        foreach($input as $word){
+            if ($n < 2){
+                $trigram .= $word.' ';
+                $n++;
+            }
+            else {
+                $trigram .= $word.', ';
+                $n = 0;
+            }
+        }
+    $trigram = substr($trigram, 0, -2);
+    
+    $result = "● Unigram : ".$unigram . "\n● Bigram : ".$bigram . "\n● Trigram : " . $trigram;
+    return $result;
 }
 
 echo unbGenerator("Jakarta adalah ibukota negara Republik Indonesia");
