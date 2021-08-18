@@ -10,8 +10,9 @@ function jumlahHurufKecil($string){
 
     $upperDiff = similar_text($string, $upperCase); //Menghitung jumlah uppercase
 
-    return (strlen($string) - $upperDiff); 
+    
+    return $string . " mengandung ". (strlen($string) - $upperDiff) . " buah huruf kecil."; 
 }
 
-echo $s . " mengandung ". jumlahHurufKecil($s) . " buah huruf kecil.";
+echo jumlahHurufKecil($s);
 ?>
