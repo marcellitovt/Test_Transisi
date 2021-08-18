@@ -6,12 +6,12 @@ $s = "TranSISI";
 
 function jumlahHurufKecil($string){
 
-    $upperCase = strtoupper($string);
-    $upperDiff = similar_text($string, $upperCase);
-    return (strlen($string) - $upperDiff);
+    $upperCase = strtoupper($string); // Sampel huruf uppercase
+
+    $upperDiff = similar_text($string, $upperCase); //Menghitung jumlah uppercase
+
+    return (strlen($string) - $upperDiff); 
 }
 
-
-// echo "Lowercase: " . jumlahHurufKecil($s);
 echo $s . " mengandung ". jumlahHurufKecil($s) . " buah huruf kecil.";
 ?>
