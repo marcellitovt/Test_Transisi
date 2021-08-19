@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\CompanyController::class, 'index']);
 Route::resource('/company', App\Http\Controllers\CompanyController::class);
 Route::resource('/employee', App\Http\Controllers\EmployeeController::class);
 
