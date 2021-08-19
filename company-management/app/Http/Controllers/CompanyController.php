@@ -43,7 +43,8 @@ class CompanyController extends Controller
         $company = new Company;
         $company->name = $request->name;
         $company->email = $request->email;
-        $company->logo_path = $request->logo_path;
+        $image = $request->logo_path->store('company');
+        $company->logo_path = $image;
         $company->website = $request->website;
         $company->save();
 

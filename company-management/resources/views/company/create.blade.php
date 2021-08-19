@@ -44,7 +44,7 @@
                 <div class="col-md-4"></div>
                 <div class="form-group col-md-4">
                     <label for="logo_path">Logo :</label>
-                    <input type="text" name="logo_path" class="form-control">
+                    <input type="file" name="logo_path" class="form-control">
                 </div>
             </div>
             <div class="row">
