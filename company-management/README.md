@@ -29,35 +29,35 @@ Password : transisi
 Testing Laravel
 ======
 
-1. Aplikasi memiliki proses autentikasi untuk administrator. Gunakan database seeds untuk membuat user dengan email :admin@transisi.id dan password : transisi
+1. Aplikasi memiliki proses autentikasi untuk administrator. Gunakan database seeds untuk membuat user dengan email :admin@transisi.id dan password : transisi</br>
 ![alt text](/phpdasar_md/laravel1.PNG "Logo Title Text 1") </br>
 *script : database/seeders/DatabaseSeeder.php*</br>
 You can also login with default account after you run database seeder
 ***
 
-2. Aplikasi memiliki fungsionalitas CRUD untuk data companies dan employees. Gunakan Laravel Resource Controllers dengan defaultmethods. Pada companies/employees list gunakan laravel pagination, tampilkan 5 data per halaman.
+2. Aplikasi memiliki fungsionalitas CRUD untuk data companies dan employees. Gunakan Laravel Resource Controllers dengan defaultmethods. Pada companies/employees list gunakan laravel pagination, tampilkan 5 data per halaman.</br>
 ![alt text](/phpdasar_md/laravel2.PNG "Logo Title Text 1") </br>
 
 You can try the CRUD Function in here http://127.0.0.1:8000/
 ***
-3. Data companies yang disimpan adalah : Nama (wajib), email (wajib), logo (wajib, minimum 100x100 px, png, ukuran maks 2 MB),website (wajib). Simpan company logo pada folder storage/app/company. 
+3. Data companies yang disimpan adalah : Nama (wajib), email (wajib), logo (wajib, minimum 100x100 px, png, ukuran maks 2 MB),website (wajib). Simpan company logo pada folder storage/app/company. </br>
 ![alt text](/phpdasar_md/laravel3.PNG "Logo Title Text 1") </br>
 You can find the stored image in folder *storage/app/company*
 ***
-4. Data employees yang disimpan adalah : Nama (wajib), Company (foreign key ke company), email (wajib)
+4. Data employees yang disimpan adalah : Nama (wajib), Company (foreign key ke company), email (wajib)</br>
 ![alt text](/phpdasar_md/laravel3-1.PNG "Logo Title Text 1") </br>
 You can only choose inputed company names because its *foreign-key*
 ***
-5.  Gunakan database migrations untuk membuat schema yang diperlukan
+5.  Gunakan database migrations untuk membuat schema yang diperlukan</br>
 ![alt text](/phpdasar_md/laravel5.PNG "Logo Title Text 1") </br>
 Creating *tableCompanies* using migration
 ***
-6. Gunakan laravel validation function menggunakan Request classes, untuk proses validasi data companies & employees
+6. Gunakan laravel validation function menggunakan Request classes, untuk proses validasi data companies & employees</br>
 ![alt text](/phpdasar_md/laravel6.PNG "Logo Title Text 1") </br>
 To Validate input file less than 2mb 
 ***
 
-7. Gunakan laravel/ui package sebagai basis user interface
+7. Gunakan laravel/ui package sebagai basis user interface</br>
 ![alt text](/phpdasar_md/laravel7.PNG "Logo Title Text 1") </br>
 Laravel/ui default style
 ***
