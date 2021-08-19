@@ -17,8 +17,8 @@
                 </a>
             </div>
             <div class="col-sm">
-                <a href="#" class="">
-                    Perusahaan
+                <a href="{{ action('App\Http\Controllers\EmployeeController@index') }}" class="">
+                    Karyawan
                 </a>
             </div>
             <div class="col-sm">

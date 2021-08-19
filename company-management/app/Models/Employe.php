@@ -12,7 +12,7 @@ class Employe extends Model
     protected $primaryKey = 'id_employee';
     
     public function company(){
-        return $his->belongsTo('App\Models\Company', 'id_company');
+        return $this->belongsTo('App\Models\Company', 'id_company');
     }
 
 }
