@@ -40,11 +40,21 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate(request(),[
+            'name' =>'required',
+            'email' =>'required',
+            'logo_path' =>'required|file|max:2000',
+            'website' =>'required'
+        ]);
+
         $company = new Company;
         $company->name = $request->name;
         $company->email = $request->email;
+
         $image = $request->logo_path->store('company');
         $company->logo_path = $image;
+        
         $company->website = $request->website;
         $company->save();
 
@@ -89,12 +99,10 @@ class CompanyController extends Controller
         $this->validate(request(),[
             'name' =>'required',
             'email' =>'required',
-            'logo_path' =>'required',
             'website' =>'required'
         ]);
         $company->name = $request->get('name');
         $company->email = $request->get('email');
-        $company->logo_path = $request->get('logo_path');
         $company->website = $request->get('website');
         $company->save();
         return redirect('company')->with('success','Data berhasil di update');
