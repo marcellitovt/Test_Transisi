@@ -1,64 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Test Recruitment Laravel Dasar
+======
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### How to deploy this laravel project
 
-## About Laravel
+ __Prerequisite :__
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* Composer Latest: 2.1.5
+* PHP 7.4.22 or Above
+* Laravel 8.x
+* mysql
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+__Steps :__
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Downloand/Clone source code https://github.com/marcellitovt/Test_Transisi.git
+2. Ekstrak and move to folder  </br> **company-management**
+3. Update Composer  </br> **composer update --ignore-platform-reqs**
+4. Run Migration  </br> **php artisan migrate**
+5. Run Seeder   </br> **php artisan db:seed**
+6. Run Development Server   </br> **php artisan serve**
+7. Go to URL http://127.0.0.1:8000/
 
-## Learning Laravel
+__Default Account :__
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Email : admin@transisi.id </br>
+Password : transisi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Testing Laravel
+======
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Aplikasi memiliki proses autentikasi untuk administrator. Gunakan database seeds untuk membuat user dengan email :admin@transisi.id dan password : transisi
+![alt text](/phpdasar_md/laravel1.PNG "Logo Title Text 1") </br>
+*script : database/seeders/DatabaseSeeder.php*</br>
+You can also login with default account after you run database seeder
+***
 
-### Premium Partners
+2. Aplikasi memiliki fungsionalitas CRUD untuk data companies dan employees. Gunakan Laravel Resource Controllers dengan defaultmethods. Pada companies/employees list gunakan laravel pagination, tampilkan 5 data per halaman.
+![alt text](/phpdasar_md/laravel2.PNG "Logo Title Text 1") </br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+You can try the CRUD Function in here http://127.0.0.1:8000/
+***
+3. Data companies yang disimpan adalah : Nama (wajib), email (wajib), logo (wajib, minimum 100x100 px, png, ukuran maks 2 MB),website (wajib). Simpan company logo pada folder storage/app/company. 
+![alt text](/phpdasar_md/laravel3.PNG "Logo Title Text 1") </br>
+You can find the stored image in folder *storage/app/company*
+***
+4. Data employees yang disimpan adalah : Nama (wajib), Company (foreign key ke company), email (wajib)
+![alt text](/phpdasar_md/laravel3-1.PNG "Logo Title Text 1") </br>
+You can only choose inputed company names because its *foreign-key*
+***
+5.  Gunakan database migrations untuk membuat schema yang diperlukan
+![alt text](/phpdasar_md/laravel5.PNG "Logo Title Text 1") </br>
+Creating *tableCompanies* using migration
+***
+6. Gunakan laravel validation function menggunakan Request classes, untuk proses validasi data companies & employees
+![alt text](/phpdasar_md/laravel6.PNG "Logo Title Text 1") </br>
+To Validate input file less than 2mb 
+***
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Gunakan laravel/ui package sebagai basis user interface
+![alt text](/phpdasar_md/laravel7.PNG "Logo Title Text 1") </br>
+Laravel/ui default style
+***
