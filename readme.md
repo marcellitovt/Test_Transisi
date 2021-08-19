@@ -46,6 +46,25 @@ Contoh : bila fungsi diberikan input “Jakarta adalah ibukota negara Republik I
 
 
 * Answer : *Tugas 5.php* <br />
-![alt text](/phpdasar_md/Tugas3.PNG "Logo Title Text 1")
+![alt text](/phpdasar_md/Tugas5.PNG "Logo Title Text 1")
 
 ***
+
+6. Diketahui sebuah array berikut :
+$arr = [
+ ['f', 'g', 'h', 'i'],
+ ['j', 'k', 'p', 'q'],
+ ['r', 's', 't', 'u']
+];<br />
+Buatlah sebuah fungsi dalam PHP untuk melakukan pencarian kata dalam array di atas.
+(perhatikan contoh di bawah ini)<br /><br />
+cari($arr, 'fghi'); // true<br />
+cari($arr, 'fghp'); // true<br />
+cari($arr, 'fjrstp'); // true<br>
+
+
+* Answer : *Tugas 6.php* <br />
+![alt text](/phpdasar_md/Tugas6.PNG "Logo Title Text 1")
+
+***
+
