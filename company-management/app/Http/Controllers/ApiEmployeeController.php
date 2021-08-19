@@ -15,7 +15,7 @@ class ApiEmployeeController extends Controller
      */
     public function index()
     {
-        $data_employee = Employe::All()->toArray();
+        $data_employee = Employe::with('id_company')->get()->toArray();
         return $data_employee;
     }
 
