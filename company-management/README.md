@@ -14,17 +14,25 @@ __Steps :__
 
 1. Downloand/Clone source code https://github.com/marcellitovt/Test_Transisi.git
 2. Ekstrak and move to folder  </br> **company-management**
-3. Update Composer  </br> **composer update --ignore-platform-reqs**
-4. Run Migration  </br> **php artisan migrate**
-5. Run Seeder   </br> **php artisan db:seed**
-6. Run Development Server   </br> **php artisan serve**
-7. Go to URL http://127.0.0.1:8000/
+3. Create database and setup .env file
+</br>
+![alt text](/phpdasar_md/env.PNG "Logo Title Text 1") </br>
+4. Update Composer  </br> **composer update --ignore-platform-reqs**
+5. Run Migration  </br> **php artisan migrate**
+6. Run Seeder   </br> **php artisan db:seed**
+7. Run Development Server   </br> **php artisan serve**
+8. Go to URL http://127.0.0.1:8000/
 
 __Default Account :__
 
 Email : admin@transisi.id </br>
 Password : transisi
 
+__Additional Feature :__</br>
+API Get-Company List: http://127.0.0.1:8000/api/company </br>
+API Get-Employee List: http://127.0.0.1:8000/api/employee </br>
+*Note : this is read-only API, because it's not secured yet*</br>
+</br>
 
 Testing Laravel
 ======
